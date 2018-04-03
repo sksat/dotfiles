@@ -1,5 +1,5 @@
-#HOME	= ~
-HOME	= ./test
+HOME	= /home/sksat
+#HOME	= ./test
 LOGFILE	= ./log.txt
 
 LOGGING	= tee -a $(LOGFILE)
@@ -11,15 +11,15 @@ list:
 	@sh list.sh
 
 install:
-	#@make log
+	@make log
 	@make install_main 2>&1 | $(LOGGING)
 
 update: install
-	#@make log
+	@make log
 	@make update_main 2>&1 | $(LOGGING)
 
 uninstall:
-	#@make log
+	@make log
 	@make uninstall_main 2>&1 | $(LOGGING)
 
 log:
