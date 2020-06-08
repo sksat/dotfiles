@@ -1,3 +1,20 @@
 [user]
-	email = sksat.tec@gmail.com
+	email = sksat@sksat.net
 	name = sksat
+	signingkey = 275CF166
+[core]
+	quotepath = false
+	editor = nvim
+[credential]
+	helper = cache --timeout=7200
+[push]
+	default = current
+[color]
+	ui = auto
+[alias]
+	st = status
+[filter "lfs"]
+    smudge = git-lfs smudge --skip -- %f
+    process = git-lfs filter-process --skip
+    required = true
+    clean = git-lfs clean -- %f
