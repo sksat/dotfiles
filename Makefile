@@ -1,49 +1,51 @@
-HOME	= /home/sksat
-#HOME	= ./test
-LOGFILE	= ./log.txt
+HOME		= /home/sksat
+LOGDIR	= ./log
 
-LOGGING	= tee -a $(LOGFILE)
-
-default:
-	make install
-
-list:
-	@sh list.sh
+help:
+	@echo help
 
 install:
-	@make log
-	@make install_main 2>&1 | $(LOGGING)
+	@make list_files --no-print-directory | xargs -i make --no-print-directory install_file SRC="{}"
 
-update: install
-	@make log
-	@make update_main 2>&1 | $(LOGGING)
-
-uninstall:
-	@make log
-	@make uninstall_main 2>&1 | $(LOGGING)
-
-log:
-	@[ ! -f $(LOGFILE) ] || mv $(LOGFILE) $(LOGFILE).org
-
-error:
-	$(error $(MSG))
-
-install_main:
-	@echo "start install..."
-	sh script.sh $(HOME) install
-	@date > install
-	@echo "install finished!"
-
-update_main:
-	@echo "start update..."
+update:
 	git fetch
 	git pull origin master
-	@date > last_update
-	@echo "update finished!"
 
-uninstall_main:
-	@echo "start uninstall..."
-	@[ -f install ] || make error MSG="not installed"
-	@[ ! -f last_update ] || rm last_update
-	rm install
-	@echo "uninstall finished!"
+uninstall:
+	@make list_files --no-print-directory | xargs -i make --no-print-directory uninstall_file SRC="{}"
+
+reinstall:
+	make uninstall
+	make install
+
+list: list_files
+
+install_file:
+	@echo -e "install ${SRC}"
+	@make --no-print-directory target_dir DIR=`dirname ${HOME}/${SRC}`
+	@make check_exist TARGET="${HOME}/${SRC}"
+	@echo -en "\tlink: "
+	@ln -snbfvr files/${SRC} ${HOME}/${SRC}
+
+uninstall_file:
+	@if [ -f "${HOME}/${SRC}" ]; then echo "uninstall ${HOME}/${SRC}"; rm ${HOME}/${SRC}; fi
+	@if [ -f "${HOME}/${SRC}.bak" ]; then echo -e "\trestore from backup: ${HOME}/${SRC}.bak"; mv ${HOME}/${SRC}.bak ${HOME}/${SRC}; fi
+
+check_exist:
+	@if [ -f ${TARGET} ]; then echo -e "\twarning: file exist"; make backup_file; fi
+
+backup_file:
+	@echo -e "\t${TARGET} -> ${TARGET}.bak"
+	@mv ${TARGET} ${TARGET}.bak
+
+target_dir:
+	@if [ ! -d ${DIR} ]; then echo -e "\tcreate directory: ${DIR}";mkdir -p ${DIR}; fi
+
+list_files:
+	@find files/ -mindepth 1 -type f | sed 's/files\///'
+
+list_notinstalled:
+	@make --no-print-directory list_files | xargs -i make --no-print-directory file_notinstalled FILE={}
+
+file_notinstalled:
+	@if [ ! -f ${HOME}/${FILE} ]; then echo ${FILE}; fi

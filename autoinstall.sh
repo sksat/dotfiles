@@ -1,9 +1,9 @@
 #!/bin/sh
 
 GIT_REPO="https://github.com/sk2sat/dotfiles"
-DOTPATH=.dotfiles
+DOTPATH=/home/sksat/dotfiles
 
-if [ -d ./.dotfiles ];then
+if [ -d $DOTPATH ];then
 	cd $DOTPATH
 	make update
 	exit
