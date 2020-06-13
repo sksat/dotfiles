@@ -1,3 +1,17 @@
+set tabstop=4
+set shiftwidth=4
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+set clipboard+=unnamedplus
+
+set helplang=ja
+
+tnoremap <silent> <ESC> <C-\><C-n>
+set shell=fish
+
+noremap : ;
+noremap ; :
+
 "dein Scripts-----------------------------
 if &compatible
   set nocompatible               " Be iMproved

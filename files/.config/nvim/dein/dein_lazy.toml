@@ -1,0 +1,37 @@
+# deoplete------------------
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+let g:deoplete#enable_at_startup   = 1
+let g:deoplete#auto_complete_delay = 0
+inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+on_i = 1
+
+# deoppet
+
+
+# lsp
+#[[plugins]]
+#repo = 'lighttiger2505/deoplete-vim-lsp'
+#on_ft = ['cpp']
+
+# markdown
+
+[[plugins]]
+repo = 'previm/previm'
+on_ft = ['markdown']
+hook_add = '''
+  let g:previm_open_cmd = "firefox"
+'''
+
+[[plugins]]
+repo = 'mattn/vim-maketable'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'ziglang/zig.vim'
+on_ft = ['zig']

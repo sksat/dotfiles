@@ -1,0 +1,21 @@
+# Required
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/deol.nvim'
+
+#[[plugins]]
+#repo = 'Shougo/deoppet.nvim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'leico/autodate.vim'
+
+[[plugins]]
+repo = 'markonm/traces.vim'
