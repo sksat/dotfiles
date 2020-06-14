@@ -9,7 +9,7 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export EDITOR=vim
-export TERMINAL=tilix #sakura
+export TERMINAL=tilix
 
 export GTKIMMODULE_ibus
 export XMODIFIERS=@im=ibus

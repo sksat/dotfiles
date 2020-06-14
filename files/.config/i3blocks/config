@@ -5,9 +5,30 @@ command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[uptime]
+label=uptime: 
+command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
+color=#8fa1b3
+interval=60
+
+#/usr/lib/i3blocks/arch-update/arch-update.py
+
+# CPU usage
+#
+# The script may be called with -w and -c switches to specify thresholds,
+# see the script for details.
+#[cpu_usage]
+#label=CPU
+#interval=10
+#min_width=CPU: 100.00%
+#separator=false
+
+[load_average]
+interval=5
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
+
 [memory]
 label=RAM
 interval=30
@@ -24,7 +45,7 @@ interval=30
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=HOME: 
 #instance=/mnt/data
 interval=30
 
@@ -42,32 +63,19 @@ interval=10
 interval=10
 separator=false
 
-[bandwidth]
+#[bandwidth]
 #instance=eth0
-interval=5
-
-# CPU usage
-#
-# The script may be called with -w and -c switches to specify thresholds,
-# see the script for details.
-[cpu_usage]
-label=CPU
-interval=10
-min_width=CPU: 100.00%
-#separator=false
-
-[load_average]
-interval=5
+#interval=5
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
-[battery]
-label=BAT
+#[battery]
+#label=BAT
 #color=#FF0000
 #label=⚡
 #instance=1
-interval=30
+#interval=30
 
 # Volume indicator
 #
@@ -83,6 +91,6 @@ interval=once
 signal=10
 
 # Date Time
-[time]
+[date]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
