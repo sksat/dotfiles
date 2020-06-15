@@ -1,0 +1,9 @@
+[Unit]
+Description=Random wallpaper with feh
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'DISPLAY=:0 /usr/bin/feh --bg-max -r %h/Pictures'
+
+[Install]
+WantedBy=default.target

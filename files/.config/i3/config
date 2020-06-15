@@ -170,6 +170,7 @@ bindsym $mod+r mode "resize"
 # status bar
 bar {
 	status_command i3blocks
+	position top
 	font pango:Koruri Bold 15px
 }
 
