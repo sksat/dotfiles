@@ -6,10 +6,12 @@ help:
 
 install:
 	@make list_files --no-print-directory | xargs -i make --no-print-directory install_file SRC="{}"
+	make install_dconf
 
 update:
 	git fetch
 	git pull origin master
+	make install_dconf
 
 uninstall:
 	@make list_files --no-print-directory | xargs -i make --no-print-directory uninstall_file SRC="{}"
@@ -17,6 +19,15 @@ uninstall:
 reinstall:
 	make uninstall
 	make install
+
+list_dconf:
+	@find dconf -type f | sed -e 's/dconf//'
+
+dump_dconf:
+	@make list_dconf --no-print-directory | tee /dev/stderr | xargs -i sh -c "dconf dump {}/ > ./dconf{}"
+
+install_dconf:
+	@make list_dconf --no-print-directory | tee /dev/stderr | xargs -i echo "dconf load {}/ < ./dconf{}"
 
 list: list_files
 
