@@ -1,37 +1,54 @@
-# deoplete------------------
+# dark powered
+
+## neosnippet
+[[plugins]]
+repo = 'Shougo/neosnippet'
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+# CVS
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'mhinz/vim-signify'
+on_event = 'InsertEnter'
 hook_add = '''
-let g:deoplete#enable_at_startup   = 1
-let g:deoplete#auto_complete_delay = 0
-inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+	set updatetime=100
 '''
-on_i = 1
 
-# deoppet
+[[plugins]]
+repo = "tpope/vim-fugitive"
+on_event = 'VimEnter'
 
+# debug
+[[plugins]]
+repo = 'sakhnik/nvim-gdb'
+on_ft = ['c', 'cpp']
 
-# lsp
-#[[plugins]]
-#repo = 'lighttiger2505/deoplete-vim-lsp'
-#on_ft = ['cpp']
+# language
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = '''
+	let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'ziglang/zig.vim'
+on_ft = ['zig']
+
+[[plugins]]
+repo = 'zenlang/zen.vim'
+on_ft = ['zen']
 
 # markdown
+## table
+[[plugins]]
+repo = 'mattn/vim-maketable'
+on_ft = ['markdown']
 
+## preview
 [[plugins]]
 repo = 'previm/previm'
 on_ft = ['markdown']
 hook_add = '''
   let g:previm_open_cmd = "firefox"
 '''
-
-[[plugins]]
-repo = 'mattn/vim-maketable'
-on_ft = ['markdown']
-
-[[plugins]]
-repo = 'ziglang/zig.vim'
-on_ft = ['zig']

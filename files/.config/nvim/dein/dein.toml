@@ -3,19 +3,70 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+# dark powered
+
+## deoplete
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_event = 'InsertEnter'
+hook_add = '''
+	source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
+
+## denite
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+## deoppet
+[[plugins]]
+repo = 'Shougo/deoppet.nvim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+## deol
+[[plugins]]
 repo = 'Shougo/deol.nvim'
 
-#[[plugins]]
-#repo = 'Shougo/deoppet.nvim'
+## defx
+[[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = '''
+	source ~/.config/nvim/plugins/defx.rc.vim
+'''
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
+repo = 'kristijanhusak/defx-git'
+depends = ['defx.nvim']
 
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
+repo = 'kristijanhusak/defx-icons'
+depends = ['defx.nvim', 'vim-devicons']
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+# util
 
 [[plugins]]
 repo = 'leico/autodate.vim'
 
 [[plugins]]
 repo = 'markonm/traces.vim'
+
+# LSP
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'lighttiger2505/deoplete-vim-lsp'
+depends = ['deoplete', 'deoplete-vim-lsp']
+on_ft = ['c', 'cpp']
+hook_add = '''
+	source ~/.config/nvim/plugins/deoplete-vim-lsp.rc.vim
+'''

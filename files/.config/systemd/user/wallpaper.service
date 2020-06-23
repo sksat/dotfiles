@@ -3,7 +3,7 @@ Description=Random wallpaper with feh
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'DISPLAY=:0 /usr/bin/feh --bg-max -r %h/Pictures'
+ExecStart=/bin/bash -c 'DISPLAY=:0 /usr/bin/feh --bg-max -z -r %h/Pictures/wallpaper'
 
 [Install]
 WantedBy=default.target

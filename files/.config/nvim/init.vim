@@ -21,7 +21,6 @@ endif
 let s:config_home	= empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CACHE_HOME
 let s:cache_home	= empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:config_dir	= s:config_home . '/nvim'
-let s:dein_toml		= s:config_dir . '/dein/dein.toml'
 let s:dein_dir		= s:cache_home . '/dein'
 let s:dein_repo_dir	= s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -32,10 +31,11 @@ if !isdirectory(s:dein_repo_dir)
 endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 
-" load dein packages
+" load dein plugins
 if dein#load_state(s:dein_dir)
 	call dein#begin(s:dein_dir)
-	call dein#load_toml(s:dein_toml)
+	call dein#load_toml(s:config_dir . '/dein/dein.toml',      {'lazy': 0})
+	call dein#load_toml(s:config_dir . '/dein/dein_lazy.toml', {'lazy': 1})
 	call dein#end()
 	call dein#save_state()
 endif
