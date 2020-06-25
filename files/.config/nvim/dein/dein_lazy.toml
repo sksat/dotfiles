@@ -41,8 +41,12 @@ on_ft = ['zen']
 
 # markdown
 ## table
+#[[plugins]]
+#repo = 'mattn/vim-maketable'
+#on_ft = ['markdown']
+
 [[plugins]]
-repo = 'mattn/vim-maketable'
+repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown']
 
 ## preview
