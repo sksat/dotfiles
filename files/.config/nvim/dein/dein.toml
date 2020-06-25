@@ -6,6 +6,18 @@ repo = 'Shougo/dein.vim'
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline#extensions#tabline#buffer_idx_mode = 1
+	nmap <C-o> <Plug>AirlineSelectPrevTab
+	nmap <C-p> <Plug>AirlineSelectNextTab
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
 repo = 'prabirshrestha/async.vim'
 
 # dark powered
