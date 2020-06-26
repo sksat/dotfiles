@@ -1,0 +1,56 @@
+/* general */
+* {
+	text-font:	"Koruri 14";
+	icon-font:	"Nerd Font 100";
+
+	/* color */
+	background:	Black;
+	on:			White;
+	off:		Gray;
+
+	option-6-listview-spacing:	10px;
+
+	window-padding: 	80px 0px 0px 0px;
+	element-border:		5px;
+	element-padding:	10px 40px 40px -110px;
+}
+
+* {
+	background-color: @background;
+	font: @icon-font;
+	font: @text-font;
+}
+
+window {
+	width:		50%;
+	height:		30%;
+	anchor:		center;
+	location:	center;
+	x-offset:	0%;
+	y-offset:	0%;
+	padding:	@window-padding;
+	children:	[ horibox ];
+}
+
+horibox {
+    orientation: horizontal;
+    children:   [ listview ];
+}
+
+listview {
+    layout:     horizontal;
+    spacing:    5px;
+    lines:      10;
+}
+
+element {
+	font: @icon-font;
+    padding: @element-padding;
+	border: @element-border;
+	text-color: @off;
+}
+element.selected {
+	text-color: @on;
+}
+
+/* vim:ft=css

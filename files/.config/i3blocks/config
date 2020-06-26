@@ -8,8 +8,12 @@ markup=none
 [uptime]
 label=uptime: 
 command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
-color=#8fa1b3
 interval=60
+
+# Date Time
+[date]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
 
 #/usr/lib/i3blocks/arch-update/arch-update.py
 
@@ -90,7 +94,6 @@ instance=Master
 interval=once
 signal=10
 
-# Date Time
-[date]
-command=date '+%Y-%m-%d %H:%M:%S'
-interval=1
+[system]
+full_text="system"
+command=i3-msg exec ~/.config/rofi/scripts/system.sh > /dev/null
