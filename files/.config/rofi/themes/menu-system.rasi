@@ -1,7 +1,7 @@
 /* general */
 * {
 	text-font:	"Koruri 14";
-	icon-font:	"Nerd Font 100";
+	icon-font:	"Symbols Nerd Font 100";
 
 	/* color */
 	background:	Black;

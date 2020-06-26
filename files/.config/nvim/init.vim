@@ -18,7 +18,7 @@ if &compatible
 endif
 
 " set directory
-let s:config_home	= empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CACHE_HOME
+let s:config_home	= empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME
 let s:cache_home	= empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 let s:config_dir	= s:config_home . '/nvim'
 let s:dein_dir		= s:cache_home . '/dein'
