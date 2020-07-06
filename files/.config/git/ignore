@@ -1,0 +1,23 @@
+# OS
+.Trash*
+Thumbs.db
+.DS_Store
+
+# Editor
+*.swp
+*~
+
+# Binary
+*.bin
+*.elf
+*.so
+*.o
+*.obj
+*.exe
+*.dll
+
+# Language
+.bundle
+vendor/bundle
+*.py[co]
+node_modules/
