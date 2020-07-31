@@ -1,3 +1,6 @@
+set number
+set list
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set tabstop=4
 set shiftwidth=4
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
@@ -16,6 +19,8 @@ noremap ; :
 if &compatible
   set nocompatible               " Be iMproved
 endif
+
+let g:python3_host_prog ='/usr/bin/python3'
 
 " set directory
 let s:config_home	= empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME

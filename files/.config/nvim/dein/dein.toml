@@ -1,9 +1,19 @@
+# colorscheme
+[[plugins]]
+repo = 'otyn0308/otynium'
+hook_add = '''
+	colorscheme otynium
+'''
+
 # Required
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -19,6 +29,12 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'prabirshrestha/async.vim'
+
+#[[plugins]]
+#repo = 'simeji/winresizer'
+#hook_add = '''
+#	let g:winresizer_start_key = '<C-S-R>'
+#'''
 
 # dark powered
 
@@ -82,3 +98,6 @@ on_ft = ['c', 'cpp']
 hook_add = '''
 	source ~/.config/nvim/plugins/deoplete-vim-lsp.rc.vim
 '''
+
+#[[plugins]]
+#repo = 'neovim/nvim-lsp'

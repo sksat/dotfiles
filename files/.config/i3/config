@@ -179,5 +179,5 @@ bar {
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
-for_window [title="Preferences$|Configuration$|QEMU"] floating enable
-for_window [class="feh|vlc|Nextcloud|MEGAsync|Skype"] floating enable
+for_window [title="Preferences$|Configuration$|動画再生 - Mozilla Firefox|QEMU"] floating enable
+for_window [class="feh|Nemo|vlc|Nextcloud|MEGAsync|Skype"] floating enable
