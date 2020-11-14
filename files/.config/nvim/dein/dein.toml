@@ -5,15 +5,18 @@ hook_add = '''
 	colorscheme otynium
 '''
 
+#[[plugins]]
+#repo = 'cocopon/iceberg.vim'
+#hook_add = '''
+#	colorscheme iceberg
+#'''
+
 # Required
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -89,15 +92,7 @@ repo = 'markonm/traces.vim'
 
 # LSP
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-
-[[plugins]]
-repo = 'lighttiger2505/deoplete-vim-lsp'
-depends = ['deoplete', 'deoplete-vim-lsp']
-on_ft = ['c', 'cpp']
+repo = 'neovim/nvim-lspconfig'
 hook_add = '''
-	source ~/.config/nvim/plugins/deoplete-vim-lsp.rc.vim
+	lua require('nvim-lsp')
 '''
-
-#[[plugins]]
-#repo = 'neovim/nvim-lsp'
