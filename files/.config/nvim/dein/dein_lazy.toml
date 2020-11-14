@@ -39,6 +39,10 @@ on_ft = ['zig']
 repo = 'zenlang/zen.vim'
 on_ft = ['zen']
 
+[[plugins]]
+repo = 'zah/nim.vim'
+on_ft = ['nim']
+
 # markdown
 ## table
 #[[plugins]]

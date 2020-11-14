@@ -1,5 +1,7 @@
 #!/bin/sh
 
+session=${1:-i3}
+
 #setxkbmap jp
 
 eval "$(dbus-launch --sh-syntax --exit-with-session)"
@@ -16,4 +18,9 @@ export XMODIFIERS=@im=fcitx
 fcitx-autostart
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
-exec i3
+case $session in
+	i3		) exec i3;;
+	kde		) exec startplasma-x11;;
+	gnome	) exec gnome-session ;;
+	*) exec $1;;
+esac
