@@ -1,7 +1,7 @@
-require'nvim_lsp'.clangd.setup{}
-require'nvim_lsp'.cmake.setup{}
-require'nvim_lsp'.dockerls.setup{}
-require'nvim_lsp'.gopls.setup{}
-require'nvim_lsp'.rust_analyzer.setup{}
-require'nvim_lsp'.texlab.setup{}
-require'nvim_lsp'.yamlls.setup{}
+require'lspconfig'.clangd.setup{}
+require'lspconfig'.cmake.setup{}
+require'lspconfig'.dockerls.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.rust_analyzer.setup{}
+require'lspconfig'.texlab.setup{}
+require'lspconfig'.yamlls.setup{}

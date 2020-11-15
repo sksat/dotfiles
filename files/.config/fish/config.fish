@@ -1,4 +1,4 @@
-set PATH $PATH $HOME/.cargo/bin $HOME/go/bin "/opt/TD1909/bin" "/var/lib/snapd/snap/bin" "/opt/riscv-toolchain/bin"
+set PATH $HOME/.cargo/bin $PATH $HOME/go/bin "/opt/TD1909/bin" "/var/lib/snapd/snap/bin" "/opt/riscv-toolchain/bin"
 
 alias vi="nvim"
 alias vim="nvim"
