@@ -15,6 +15,10 @@ set shell=fish
 noremap : ;
 noremap ; :
 
+let mapleader = "\<Space>"
+nnoremap <Leader>w :w<CR>
+nnoremap <silent> <Leader>t :<C-u> terminal <CR>
+
 " dein config
 if &compatible
   set nocompatible               " Be iMproved
