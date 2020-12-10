@@ -17,6 +17,7 @@ export XMODIFIERS=@im=fcitx
 
 fcitx-autostart
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+.screenlayout/default.sh
 
 case $session in
 	i3		) exec i3;;

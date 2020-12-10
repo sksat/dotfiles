@@ -20,11 +20,24 @@ repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+depends = ['lsp-status.nvim']
 hook_add = '''
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline#extensions#tabline#buffer_idx_mode = 1
 	nmap <C-o> <Plug>AirlineSelectPrevTab
 	nmap <C-p> <Plug>AirlineSelectNextTab
+
+	function LspStatus() abort
+		if luaeval('#vim.lsp.buf_get_clients() > 0')
+			let status = luaeval('require("lsp-status").status()')
+			return trim(status)
+		endif
+		return ''
+	endfunction
+	call airline#parts#define_function('lsp_status', 'LspStatus')
+	call airline#parts#define_condition('lsp_status', 'luaeval("#vim.lsp.buf_get_clients() > 0")')
+	let g:airline#extensions#nvimlsp#enabled = 0
+	let g:airline_section_warning = airline#section#create_right(['lsp_status'])
 '''
 
 [[plugins]]
@@ -93,12 +106,17 @@ repo = 'markonm/traces.vim'
 # LSP
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+depends = ['lsp-status']
 hook_add = '''
 	lua require('nvim-lsp')
 '''
 
 [[plugins]]
+repo = 'nvim-lua/lsp-status.nvim'
+
+[[plugins]]
 repo = 'nvim-lua/completion-nvim'
+depends = ['nvim-lspconfig']
 hook_add = '''
 	autocmd BufEnter * lua require'completion'.on_attach()
 
@@ -112,4 +130,12 @@ hook_add = '''
 	" Avoid showing message extra message when using completion
 	set shortmess+=c
 	imap <tab> <Plug>(completion_smart_tab)
+'''
+
+[[plugins]]
+repo = 'nvim-lua/lsp_extensions.nvim'
+depends = ['nvim-lspconfig']
+hook_add = '''
+	autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+	nnoremap <Leader>h :lua require'lsp_extensions'.inlay_hints()<CR>
 '''
