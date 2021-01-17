@@ -3,6 +3,9 @@ set list
 set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set tabstop=4
 set shiftwidth=4
+set modeline
+set modelines=5
+autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 set clipboard+=unnamedplus

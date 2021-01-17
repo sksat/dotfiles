@@ -1,13 +1,23 @@
+local lspcfg = require('lspconfig')
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 
-require'lspconfig'.clangd.setup{}
-require'lspconfig'.cmake.setup{}
-require'lspconfig'.dockerls.setup{}
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.rust_analyzer.setup{
-	on_attach = lsp_status.on_attach,
+lspcfg.clangd.setup{}
+lspcfg.cmake.setup{}
+lspcfg.dockerls.setup{}
+lspcfg.gopls.setup{}
+lspcfg.html.setup{
+	cmd = {"vscode-html-languageserver", "--stdio"}
+}
+lspcfg.julials.setup{}
+lspcfg.pyls.setup{}
+lspcfg.rome.setup{}
+lspcfg.rust_analyzer.setup{
+--	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities
 }
-require'lspconfig'.texlab.setup{}
-require'lspconfig'.yamlls.setup{}
+lspcfg.sumneko_lua.setup{}
+lspcfg.texlab.setup{}
+lspcfg.vimls.setup{}
+lspcfg.yamlls.setup{}
+lspcfg.zls.setup{}

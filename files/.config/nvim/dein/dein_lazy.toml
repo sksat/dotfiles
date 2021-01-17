@@ -22,14 +22,26 @@ hook_add = '''
 repo = "tpope/vim-fugitive"
 on_event = 'VimEnter'
 
+[[plugins]]
+repo = "rhysd/git-messenger.vim"
+on_cmd = "GitMessenger"
+on_map = "<Plug>(git-messenger"
+
 # debug
 [[plugins]]
 repo = 'sakhnik/nvim-gdb'
 on_ft = ['c', 'cpp']
 
+[[plugins]]
+repo = "preservim/tagbar"
+hook_add = '''
+	nnoremap <silent> <Leader>t :TagbarToggle<CR>
+'''
+
 # language
 [[plugins]]
 repo = 'rust-lang/rust.vim'
+depends = ['tagbar']
 on_ft = ['rust']
 hook_add = '''
 	let g:rustfmt_autosave = 1
@@ -47,7 +59,15 @@ on_ft = ['zen']
 repo = 'zah/nim.vim'
 on_ft = ['nim']
 
-# markdown
+# utility
+
+#[[plugins]]
+#repo = 'editorconfig/editorconfig-vim'
+#on_ft = ['c']
+#hook_add = '''
+#	let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+#'''
+
 ## table
 #[[plugins]]
 #repo = 'mattn/vim-maketable'
