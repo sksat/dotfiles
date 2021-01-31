@@ -21,3 +21,6 @@ lspcfg.texlab.setup{}
 lspcfg.vimls.setup{}
 lspcfg.yamlls.setup{}
 lspcfg.zls.setup{}
+
+local saga = require 'lspsaga'
+saga.init_lsp_saga()

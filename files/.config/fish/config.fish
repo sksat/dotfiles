@@ -7,6 +7,7 @@ alias tdide="/opt/TD1909/bin/td -gui"
 
 alias 須藤="sudo"
 alias 自害="shutdown -P now"
+alias rust-musl-builder="sudo docker run --rm -it -v (pwd):/home/rust/src ekidd/rust-musl-builder"
 
 # opam configuration
 source /home/sksat/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
