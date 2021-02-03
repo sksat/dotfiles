@@ -16,6 +16,10 @@ hook_add = '''
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 [[plugins]]
@@ -143,3 +147,6 @@ hook_add = '''
 [[plugins]]
 repo = 'glepnir/lspsaga.nvim'
 depends = ['nvim-lspconfig']
+
+[[plugins]]
+repo = 'dag/vim-fish'

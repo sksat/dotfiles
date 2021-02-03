@@ -13,7 +13,9 @@ set clipboard+=unnamedplus
 set helplang=ja
 
 tnoremap <silent> <ESC> <C-\><C-n>
-set shell=fish
+if &shell =~# 'fish$'
+	set shell=sh
+endif
 
 noremap : ;
 noremap ; :

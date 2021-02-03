@@ -60,6 +60,24 @@ repo = 'zah/nim.vim'
 on_ft = ['nim']
 
 # utility
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_event = 'BufRead'
+hook_add = '''
+	let g:quickrun_config = {
+	\	"_": {
+	\		"runner": "vimproc",
+	\		"outputter/buffer/split": ":botright",
+	\		"outputter/buffer/close_on_empty": 1,
+	\		"hook/time/enable": 1
+	\	},
+	\	"html": {
+	\		"command": "xdg-open",
+	\		"outputter": "null",
+	\	}
+	\}
+	au FileType qf nnoremap <silent><buffer>q :quit<CR>
+'''
 
 #[[plugins]]
 #repo = 'editorconfig/editorconfig-vim'
