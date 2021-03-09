@@ -13,7 +13,7 @@ jobs:
           sudo apt update
           sudo apt install -y curl
       - name: execute autoinstall
-        run: curl -L https://git.io/vxPK2 | bash
+        run: curl https://raw.githubusercontent.com/sk2sat/dotfiles/${GITHUB_REF##*/}/autoinstall.sh | bash
       - name: post check
         run: |
           sudo apt install -y tree 2> /dev/null
