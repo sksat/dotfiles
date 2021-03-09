@@ -16,15 +16,24 @@ else
 fi
 echo "Distribution: "$distro
 
+# check user
+SUDO=""
+if [ "$(whoami)" != "root" ]; then
+	SUDO="sudo"
+fi
+
 # package manager
 function install_pkg () {
+	if [ $# = 0 ]; then
+		return
+	fi
 	case $distro in
-		"Ubuntu") apt install -y $@ ;;
+		"Ubuntu") $SUDO apt install -y $@ ;;
 		"Arch Linux") {
 			if (type yay > /dev/null 2>&1); then
 				yay -S --noconfirm $@
 			else
-				pacman -S --noconfirm $@
+				$SUDO pacman -S --noconfirm $@
 			fi
 		} ;;
 		*) exit
@@ -33,6 +42,7 @@ function install_pkg () {
 
 # check dependencies
 cmd_deps=("curl" "git" "make" "gpg")
+#cmd_deps("")
 pkgs=""
 for d in ${cmd_deps[@]}; do
 	if !(type $d > /dev/null 2>&1); then
