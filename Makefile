@@ -24,8 +24,9 @@ install:
 
 update:
 	git fetch
+	make uninstall
 	git pull origin master
-	make install_dconf
+	make install
 
 uninstall:
 	@make list_files --no-print-directory \

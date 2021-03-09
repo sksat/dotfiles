@@ -2,7 +2,7 @@
 
 ## Install
 ```
-curl -L https://git.io/vxPK2 | sh
+curl -L https://git.io/vxPK2 | bash
 ```
 
 or
