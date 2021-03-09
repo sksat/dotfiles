@@ -1,0 +1,20 @@
+name: CI
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install deps
+        run: |
+          sudo apt update
+          sudo apt install -y curl
+      - name: execute autoinstall
+        run: curl -L https://git.io/vxPK2 | bash
+      - name: post check
+        run: |
+          sudo apt install -y tree 2> /dev/null
+          tree ~/.config
