@@ -1,5 +1,8 @@
 set PATH $HOME/.cargo/bin $PATH $HOME/go/bin "/opt/TD1909/bin" "/var/lib/snapd/snap/bin" "/opt/riscv-toolchain/bin"
 
+#eval (ssh-agent -c)
+alias ssh=ssh-ident
+
 alias vi="nvim"
 alias vim="nvim"
 alias vivado="/tools/Xilinx/Vivado/2019.1/bin/vivado"
