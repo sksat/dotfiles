@@ -17,3 +17,10 @@ source /home/sksat/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 status --is-interactive; and source (rbenv init -|psub)
 thefuck --alias | source
+
+# fish plugin
+fundle plugin 'edc/bass'
+fundle plugin 'acomagu/fish-async-prompt'
+fundle plugin 'pure-fish/pure'
+
+fundle init
