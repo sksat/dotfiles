@@ -1,0 +1,20 @@
+name: CI
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: install deps
+        run: |
+          sudo apt update
+          sudo apt install -y curl
+      - name: execute autoinstall
+        run: curl https://raw.githubusercontent.com/sk2sat/dotfiles/${GITHUB_REF##*/}/autoinstall.sh | bash
+      - name: post check
+        run: |
+          sudo apt install -y tree 2> /dev/null
+          tree ~/.config
