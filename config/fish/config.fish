@@ -21,6 +21,14 @@ thefuck --alias | source
 # fish plugin
 fundle plugin 'edc/bass'
 fundle plugin 'acomagu/fish-async-prompt'
+fundle plugin 'oh-my-fish/plugin-peco'
+fundle plugin 'oh-my-fish/plugin-bang-bang'
 fundle plugin 'pure-fish/pure'
 
 fundle init
+
+# key bind
+
+function fish_user_key_bindings
+  bind \cr 'peco_select_history (commandline -b)'
+end

@@ -1,7 +1,7 @@
 [user]
 	email = sksat@sksat.net
 	name = sksat
-	signingkey = 275CF166
+	signingkey = A4500EC5DD164E44
 [core]
 	quotepath = false
 	editor = nvim
@@ -18,3 +18,7 @@
     process = git-lfs filter-process --skip
     required = true
     clean = git-lfs clean -- %f
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
