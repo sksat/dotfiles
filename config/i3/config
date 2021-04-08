@@ -37,7 +37,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+d exec rofi -show run
 
 # scrrenshot
-bindsym Print exec spectacle -r
+bindsym Print exec flameshot gui
 
 # kill focused window
 bindsym $mod+Shift+q kill
