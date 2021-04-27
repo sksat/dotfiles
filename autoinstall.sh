@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_REPO="https://github.com/sk2sat/dotfiles"
+GIT_REPO="https://github.com/sksat/dotfiles"
 DOTPATH=$HOME/dotfiles
 PUBKEYS=("https://sksat.net/pgp.txt" "https://sksat.pub/pgp")
 FINGERPRINT="A5F9 5E92 A7EF B190 A818  9609 A450 0EC5 DD16 4E44"
@@ -54,6 +54,9 @@ echo "install packages: $deps"
 install_pkg $deps
 
 # check pubkeys
+echo "import GitHub public key"
+curl 'https://github.com/web-flow.gpg' | gpg --import
+
 echo "pubkey fingerprint: $FINGERPRINT"
 for url in $PUBKEYS; do
 	echo -n "pubkey from $url: "
@@ -78,7 +81,11 @@ fi
 
 git clone $GIT_REPO $DOTPATH
 cd $DOTPATH
-git verify-commit HEAD
+
+echo "\nverify commit"
+git verify-commit HEAD -v
+echo ""
+
 if [ $? -ne 0 ]; then
 	echo -e "\e[31mError. Human is Dead, mismatch.\e[m"
 	exit -1

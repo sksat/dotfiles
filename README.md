@@ -2,13 +2,13 @@
 
 ## Install
 ```
-curl -L https://git.io/vxPK2 | bash
+curl https://sksat.net/dotfiles | sh
 ```
 
 or
 
 ```
-git clone https://github.com/sk2sat/dotfiles.git
+git clone https://github.com/sksat/dotfiles.git
 cd dotfiles
 make
 ```
