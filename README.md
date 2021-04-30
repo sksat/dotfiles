@@ -10,5 +10,5 @@ or
 ```
 git clone https://github.com/sksat/dotfiles.git
 cd dotfiles
-make
+./install.sh
 ```

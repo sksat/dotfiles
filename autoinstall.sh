@@ -5,6 +5,10 @@ DOTPATH=$HOME/dotfiles
 PUBKEYS=("https://sksat.net/pgp.txt" "https://sksat.pub/pgp")
 FINGERPRINT="A5F9 5E92 A7EF B190 A818  9609 A450 0EC5 DD16 4E44"
 
+if [ -z $DOTBRANCH ]; then
+	DOTBRANCH="master"
+fi
+
 # check distro
 if [ -e /etc/os-release ];then
 	name=`cat /etc/os-release | head -n1`
@@ -41,7 +45,7 @@ function install_pkg () {
 }
 
 # check dependencies
-cmd_deps=("curl" "git" "make" "gpg")
+cmd_deps=("curl" "git" "gpg")
 #cmd_deps("")
 pkgs=""
 for d in ${cmd_deps[@]}; do
@@ -75,12 +79,13 @@ echo "$p" | gpg --import
 if [ -d $DOTPATH ];then
 	echo "$DOTPATH is already exists. execute update"
 	cd $DOTPATH
-	make update
+	./update.sh
 	exit
 fi
 
 git clone $GIT_REPO $DOTPATH
 cd $DOTPATH
+git switch $DOTBRANCH
 
 echo "\nverify commit"
 git verify-commit HEAD -v
@@ -91,4 +96,4 @@ if [ $? -ne 0 ]; then
 	exit -1
 fi
 
-make install
+./install.sh
