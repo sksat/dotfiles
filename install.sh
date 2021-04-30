@@ -42,8 +42,10 @@ function install_file(){
 }
 
 function generate_base_env(){
-	local BASE_CONF=config/systemd/environment.d/base.conf
+	local SYSTEMD_ENV_DIR=config/systemd/environment.d
+	local BASE_CONF=$SYSTEMD_ENV_DIR/base.conf
 
+	create_target_dir $SYSTEMD_ENV_DIR
 	echo "generate base env config..."
 	echo "  [ gen  ] $BASE_CONF"
 	cat <<EOF > $BASE_CONF
