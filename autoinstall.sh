@@ -41,7 +41,7 @@ function install_pkg () {
 }
 
 # check dependencies
-cmd_deps=("curl" "git" "make" "gpg")
+cmd_deps=("curl" "git" "gpg")
 #cmd_deps("")
 pkgs=""
 for d in ${cmd_deps[@]}; do
@@ -75,7 +75,7 @@ echo "$p" | gpg --import
 if [ -d $DOTPATH ];then
 	echo "$DOTPATH is already exists. execute update"
 	cd $DOTPATH
-	make update
+	./update.sh
 	exit
 fi
 
@@ -91,4 +91,4 @@ if [ $? -ne 0 ]; then
 	exit -1
 fi
 
-make install
+./install.sh
