@@ -1,5 +1,2 @@
-test/
-log.txt
-log.txt.org
-last_update
-install
+log/
+config/systemd/environment.d/base.conf
