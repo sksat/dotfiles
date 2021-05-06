@@ -46,9 +46,9 @@ function main(){
 # disable execute main when source
 return 1 2>/dev/null || true
 
-if [ ! -f ./config/systemd/environment.d/base.conf ]; then
+if [ ! -f ./config/environment.d/gen.conf ]; then
 	echo "probably not yet installed"
 	exit 1
 fi
-source ./config/systemd/environment.d/base.conf
+
 main | tee ${LOGDIR}/${DATE}-update.log

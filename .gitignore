@@ -1,2 +1,2 @@
 log/
-config/systemd/environment.d/base.conf
+config/environment.d/gen.conf

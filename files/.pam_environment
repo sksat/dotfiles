@@ -1,0 +1,8 @@
+LANG             DEFAULT=en_US.UTF-8
+LC_ALL           DEFAULT=${LANG}
+
+BROWSER          DEFAULT=firefox
+EDITOR           DEFAULT=nvim
+
+XDG_CONFIG_HOME  DEFAULT=@{HOME}/.config
+XDG_DATA_HOME    DEFAULT=@{HOME}/.local/share

@@ -41,15 +41,17 @@ function install_file(){
 	ln -snbfvr ${SRC}/${FILE} ${TARGET}/${FILE}
 }
 
-function generate_base_env(){
-	local SYSTEMD_ENV_DIR=config/systemd/environment.d
-	local BASE_CONF=$SYSTEMD_ENV_DIR/base.conf
+function generate_env(){
+	local SYSTEMD_ENV_DIR=config/environment.d
+	local GEN_CONF=$SYSTEMD_ENV_DIR/gen.conf
+
+	local LAST_DOTFILE_INSTALL=`date --rfc-3339=s`
 
 	create_target_dir $SYSTEMD_ENV_DIR
-	echo "generate base env config..."
-	echo "  [ gen  ] $BASE_CONF"
-	cat <<EOF > $BASE_CONF
-XDG_CONFIG_HOME=${XDG_CONFIG_HOME}
+	echo "generate env config..."
+	echo "  [ gen  ] $GEN_CONF"
+	cat <<EOF > $GEN_CONF
+LAST_DOTFILE_INSTALL="${LAST_DOTFILE_INSTALL}"
 EOF
 }
 
@@ -58,7 +60,7 @@ function install_all(){
 	echo "XDG_CONFIG_HOME = ${XDG_CONFIG_HOME}"
 	echo ""
 
-	generate_base_env
+	generate_env
 
 	export -f create_target_dir
 	export -f backup_exist
