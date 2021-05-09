@@ -4,9 +4,6 @@ cd `dirname $0`
 
 source install.sh
 
-DATE=`date +"%Y-%m-%d-%H%M%S%Z"`
-LOGDIR=./log
-
 function print_if_not_exist(){
 	local TARGET=$1
 	local FILE=$2
