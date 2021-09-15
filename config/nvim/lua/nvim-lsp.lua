@@ -5,12 +5,13 @@ lsp_status.register_progress()
 lspcfg.clangd.setup{}
 lspcfg.cmake.setup{}
 lspcfg.dockerls.setup{}
+lspcfg.elmls.setup{}
 lspcfg.gopls.setup{}
 lspcfg.html.setup{
 	cmd = {"vscode-html-languageserver", "--stdio"}
 }
 lspcfg.julials.setup{}
-lspcfg.pyls.setup{}
+--lspcfg.pyls.setup{}
 lspcfg.rome.setup{}
 lspcfg.rust_analyzer.setup{
 --	on_attach = lsp_status.on_attach,

@@ -150,3 +150,9 @@ depends = ['nvim-lspconfig']
 
 [[plugins]]
 repo = 'dag/vim-fish'
+
+[[plugins]]
+repo = 'elmcast/elm-vim'
+
+[[plugins]]
+repo = 'rhysd/vim-llvm'

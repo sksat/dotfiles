@@ -13,7 +13,7 @@ alias 自害="shutdown -P now"
 alias rust-musl-builder="sudo docker run --rm -it -v (pwd):/home/rust/src ekidd/rust-musl-builder"
 
 # opam configuration
-source /home/sksat/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+#source /home/sksat/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
 
 status --is-interactive; and source (rbenv init -|psub)
 thefuck --alias | source

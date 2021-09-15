@@ -1,7 +1,7 @@
 # i3blocks config file
 
 # aur/i3blocks-contribにあるコマンド群
-command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
+command=/usr/lib/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
@@ -10,12 +10,24 @@ label=uptime:
 command=uptime | sed 's/.*up \([^,]*\),.*/\1/'
 interval=60
 
+[arch-update]
+markup=pango
+interval=43200
+
+[aur-update]
+markup=pango
+interval=43200
+
+[bandwidth3]
+interval=10
+
 # Date Time
 [date]
 command=date '+%Y-%m-%d %H:%M:%S'
 interval=1
 
-#/usr/lib/i3blocks/arch-update/arch-update.py
+[gpu-load]
+GPU_BRAND=AMD
 
 # CPU usage
 #

@@ -1,0 +1,13 @@
+[Unit]
+Description=Argo Tunnel (%I)
+After=network.target
+
+[Service]
+TimeoutStartSec=0
+Type=notify
+ExecStart=/usr/bin/cloudflared tunnel --hostname %i --url ssh://localhost:22
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
