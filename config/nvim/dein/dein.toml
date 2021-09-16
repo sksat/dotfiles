@@ -58,12 +58,35 @@ repo = 'prabirshrestha/async.vim'
 
 # dark powered
 
-## deoplete
+## ddc
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_event = 'InsertEnter'
-hook_add = '''
-	source ~/.config/nvim/plugins/deoplete.rc.vim
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+hook_source = '''
+	source ~/.config/nvim/plugins/ddc.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/ddc-around'
+
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+
+[[plugins]]
+repo = 'matsui54/ddc-nvim-lsp-doc'
+hook_source = '''
+  call ddc_nvim_lsp_doc#enable()
 '''
 
 ## denite
@@ -118,35 +141,35 @@ hook_add = '''
 [[plugins]]
 repo = 'nvim-lua/lsp-status.nvim'
 
-[[plugins]]
-repo = 'nvim-lua/completion-nvim'
-depends = ['nvim-lspconfig']
-hook_add = '''
-	autocmd BufEnter * lua require'completion'.on_attach()
+#[[plugins]]
+#repo = 'nvim-lua/completion-nvim'
+#depends = ['nvim-lspconfig']
+#hook_add = '''
+#	autocmd BufEnter * lua require'completion'.on_attach()
+#
+#	" Use <Tab> and <S-Tab> to navigate through popup menu
+#	inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+#	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+#
+#	" Set completeopt to have a better completion experience
+#	set completeopt=menuone,noinsert,noselect
+#
+#	" Avoid showing message extra message when using completion
+#	set shortmess+=c
+#	imap <tab> <Plug>(completion_smart_tab)
+#'''
 
-	" Use <Tab> and <S-Tab> to navigate through popup menu
-	inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-	inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+#[[plugins]]
+#repo = 'nvim-lua/lsp_extensions.nvim'
+#depends = ['nvim-lspconfig']
+#hook_add = '''
+#	autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
+#	nnoremap <Leader>h :lua require'lsp_extensions'.inlay_hints()<CR>
+#'''
 
-	" Set completeopt to have a better completion experience
-	set completeopt=menuone,noinsert,noselect
-
-	" Avoid showing message extra message when using completion
-	set shortmess+=c
-	imap <tab> <Plug>(completion_smart_tab)
-'''
-
-[[plugins]]
-repo = 'nvim-lua/lsp_extensions.nvim'
-depends = ['nvim-lspconfig']
-hook_add = '''
-	autocmd BufEnter,BufWinEnter,TabEnter *.rs :lua require'lsp_extensions'.inlay_hints{}
-	nnoremap <Leader>h :lua require'lsp_extensions'.inlay_hints()<CR>
-'''
-
-[[plugins]]
-repo = 'glepnir/lspsaga.nvim'
-depends = ['nvim-lspconfig']
+#[[plugins]]
+#repo = 'glepnir/lspsaga.nvim'
+#depends = ['nvim-lspconfig']
 
 [[plugins]]
 repo = 'dag/vim-fish'
