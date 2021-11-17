@@ -19,7 +19,7 @@
 	signingkey = A4500EC5DD164E44
 
 [includeIf "gitdir:~/work/arkedge/"]
-	path = ~/.config/git/config_arkedge
+	path = ./config_arkedge
 
 [alias]
 	st = status
