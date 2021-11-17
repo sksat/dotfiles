@@ -1,7 +1,3 @@
-[user]
-	email = sksat@sksat.net
-	name = sksat
-	signingkey = A4500EC5DD164E44
 [core]
 	quotepath = false
 	editor = nvim
@@ -11,6 +7,20 @@
 	default = current
 [color]
 	ui = auto
+
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg2
+
+[user]
+	email = sksat@sksat.net
+	name = sksat
+	signingkey = A4500EC5DD164E44
+
+[includeIf "gitdir:~/work/arkedge/"]
+	path = ~/.config/git/config_arkedge
+
 [alias]
 	st = status
 [filter "lfs"]
@@ -18,7 +28,3 @@
     process = git-lfs filter-process --skip
     required = true
     clean = git-lfs clean -- %f
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg2
