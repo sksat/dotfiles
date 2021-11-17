@@ -2,6 +2,10 @@
 	email = sksat@sksat.net
 	name = sksat
 	signingkey = A4500EC5DD164E44
+
+[includeIf "gitdir:~/work/arkedge/"]
+	path = ~/.config/git/config_arkedge
+
 [core]
 	quotepath = false
 	editor = nvim
