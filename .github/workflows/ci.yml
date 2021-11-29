@@ -13,14 +13,15 @@ jobs:
         id: info
         shell: bash
         run: |
-          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          branch=$(git symbolic-ref HEAD | sed 's/refs\/heads\///')
+          echo "::set-output name=branch::${branch}"
 
       - name: install deps
         run: |
           sudo apt update
           sudo apt install -y curl
       - name: execute autoinstall
-        run: curl https://raw.githubusercontent.com/sksat/dotfiles/${GITHUB_REF##*/}/autoinstall.sh | bash
+        run: curl https://raw.githubusercontent.com/sksat/dotfiles/${{ steps.info.outputs.branch }}/autoinstall.sh | bash
         env:
           DOTBRANCH: ${{ steps.info.outputs.branch }}
       - name: post check
