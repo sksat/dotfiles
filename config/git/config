@@ -16,7 +16,7 @@
 [user]
 	email = sksat@sksat.net
 	name = sksat
-	signingkey = A4500EC5DD164E44
+	signingkey = 93E37FD2EBFFC2594BAA404AE29BE0E952BAC01B
 
 [includeIf "gitdir:~/work/arkedge/"]
 	path = ./config_arkedge
