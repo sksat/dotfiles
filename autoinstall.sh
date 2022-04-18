@@ -3,7 +3,7 @@
 GIT_REPO="https://github.com/sksat/dotfiles"
 DOTPATH=$HOME/dotfiles
 PUBKEYS=("https://sksat.net/pgp.txt" "https://sksat.pub/pgp")
-FINGERPRINT="A5F9 5E92 A7EF B190 A818  9609 A450 0EC5 DD16 4E44"
+FINGERPRINT="93E3 7FD2 EBFF C259 4BAA  404A E29B E0E9 52BA C01B"
 
 if [ -z $DOTBRANCH ]; then
 	DOTBRANCH="master"
