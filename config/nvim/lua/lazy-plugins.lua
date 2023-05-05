@@ -8,4 +8,24 @@ return {
       vim.cmd([[colorscheme otynium]])
     end,
   },
+
+  -- utils
+  'cohama/lexima.vim',
+
+  -- CVS
+  'mhinz/vim-signify',
+  'rhysd/git-messenger.vim',
+
+  -- programming language
+  'dag/vim-fish',
+  {
+    'rust-lang/rust.vim',
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end,
+    dependencies = {
+      'preservim/tagbar',
+    },
+  },
+  'rhysd/vim-llvm',
 }
