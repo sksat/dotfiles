@@ -17,11 +17,8 @@ lspcfg.rust_analyzer.setup{
 --	on_attach = lsp_status.on_attach,
 	capabilities = lsp_status.capabilities
 }
-lspcfg.sumneko_lua.setup{}
+lspcfg.lua_ls.setup{}
 lspcfg.texlab.setup{}
 lspcfg.vimls.setup{}
 lspcfg.yamlls.setup{}
 lspcfg.zls.setup{}
-
-local saga = require 'lspsaga'
-saga.init_lsp_saga()
