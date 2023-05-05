@@ -46,6 +46,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require('lazy').setup({
+  -- colorscheme
+  {
+    "otyn0308/otynium",
+    lazy = false,
+    priority = 1000, -- load before all the other start plugins
+    config = function()
+      vim.cmd([[colorscheme otynium]])
+    end,
+  },
+})
+
 -- vim.o.{option}: global option
 -- vim.bo.{option}: buffer option
 -- vim.wo.{option}: window option
