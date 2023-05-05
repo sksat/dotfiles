@@ -1,0 +1,4 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "ceb413678dfcf3d5455208959185e3db1f7892c7" },
+  "otynium": { "branch": "master", "commit": "1671cb92ec8a9556222bbfbf96c104adb3f8590c" }
+}
