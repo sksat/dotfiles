@@ -36,4 +36,15 @@ return {
     },
   },
   'rhysd/vim-llvm',
+
+  -- LSP
+  {
+    'neovim/nvim-lspconfig',
+    init = function()
+      require('nvim-lsp') -- load lsp config
+    end,
+    dependencies = {
+      'nvim-lua/lsp-status.nvim',
+    }
+  },
 }
