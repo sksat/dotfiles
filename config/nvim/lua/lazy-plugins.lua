@@ -49,5 +49,10 @@ return {
   },
   {
     'glepnir/lspsaga.nvim',
+    event = 'LspAttach',
+    dependencies = { 'neovim/nvim-lspconfig' },
+    config = function()
+      require('lspsaga').setup({})
+    end,
   }
 }
