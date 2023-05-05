@@ -24,7 +24,15 @@ return {
       vim.g.rustfmt_autosave = 1
     end,
     dependencies = {
-      'preservim/tagbar',
+      {
+        'preservim/tagbar',
+        init = function()
+          -- nnoremap <silent> <Leader>t :TagbarToggle<CR>
+          vim.api.nvim_set_keymap('n', '<leader>' .. 't', ':TagbarToggle<CR>', {
+            noremap = true, silent = true
+          })
+        end,
+      },
     },
   },
   'rhysd/vim-llvm',
