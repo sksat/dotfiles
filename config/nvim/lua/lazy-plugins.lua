@@ -54,5 +54,11 @@ return {
     config = function()
       require('lspsaga').setup({})
     end,
-  }
+  },
+  {
+    'folke/trouble.nvim',
+    config = function ()
+      require('trouble').setup({})
+    end,
+  },
 }

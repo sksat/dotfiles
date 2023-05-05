@@ -8,6 +8,7 @@
   "otynium": { "branch": "master", "commit": "1671cb92ec8a9556222bbfbf96c104adb3f8590c" },
   "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
   "tagbar": { "branch": "master", "commit": "be563539754b7af22bbe842ef217d4463f73468c" },
+  "trouble.nvim": { "branch": "main", "commit": "d56bfc0c501ced4002a57cb60433362fb2ce9c4d" },
   "vim-fish": { "branch": "master", "commit": "50b95cbbcd09c046121367d49039710e9dc9c15f" },
   "vim-llvm": { "branch": "master", "commit": "fcf5358f55ccc93202e496772f49f70b94230268" },
   "vim-signify": { "branch": "master", "commit": "6a9499c1e13a7356780d9cf813380baefaebcb32" }
