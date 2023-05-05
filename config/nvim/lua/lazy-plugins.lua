@@ -47,4 +47,7 @@ return {
       'nvim-lua/lsp-status.nvim',
     }
   },
+  {
+    'glepnir/lspsaga.nvim',
+  }
 }
