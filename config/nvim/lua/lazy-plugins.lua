@@ -35,6 +35,15 @@ return {
       },
     },
   },
+  {
+    'simrat39/rust-tools.nvim', -- improve builtin-lsp & Rust experience
+    dependencies = {
+      'neovim/nvim-lspconfig',
+    },
+    config = function()
+      require('rust-tools').setup({})
+    end,
+  },
   'rhysd/vim-llvm',
 
   -- LSP
@@ -54,5 +63,17 @@ return {
     config = function()
       require('lspsaga').setup({})
     end,
-  }
+  },
+  {
+    'folke/trouble.nvim',
+    config = function ()
+      require('trouble').setup({})
+    end,
+  },
+  {
+    'j-hui/fidget.nvim',    -- Standalone UI for nvim-lsp progress
+    config = function()
+      require('fidget').setup({})
+    end,
+  },
 }
