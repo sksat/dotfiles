@@ -12,10 +12,6 @@ export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
 export TERMINAL=tilix
 
-export GTKIMMODULE_ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-
 export QSYS_ROOTDIR="$HOME/.cache/yay/quartus-free/pkg/quartus-free/opt/altera/19.1/quartus/sopc_builder/bin"
 
 gpgconf --launch gpg-agent
