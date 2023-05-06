@@ -35,6 +35,15 @@ return {
       },
     },
   },
+  {
+    'simrat39/rust-tools.nvim', -- improve builtin-lsp & Rust experience
+    dependencies = {
+      'neovim/nvim-lspconfig',
+    },
+    config = function()
+      require('rust-tools').setup({})
+    end,
+  },
   'rhysd/vim-llvm',
 
   -- LSP
