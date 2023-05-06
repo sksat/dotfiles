@@ -46,6 +46,19 @@ return {
   },
   'rhysd/vim-llvm',
 
+  -- treesitter
+  {
+    'nvim-treesitter/nvim-treesitter',
+    init = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = 'all',
+        highlight = {
+          enable = true,
+        }
+      })
+    end,
+  },
+
   -- LSP
   {
     'neovim/nvim-lspconfig',
