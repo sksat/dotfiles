@@ -10,7 +10,7 @@ PS1='[\u@\h \W]\$ '
 
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
-export TERMINAL=tilix
+export TERMINAL=wezterm
 
 export QSYS_ROOTDIR="$HOME/.cache/yay/quartus-free/pkg/quartus-free/opt/altera/19.1/quartus/sopc_builder/bin"
 
