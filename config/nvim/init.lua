@@ -32,30 +32,23 @@ local cache_home = env_or_default("XDG_CACHE_HOME", home .. "/.cache")
 
 local cfg_dir = cfg_home .. "/nvim"
 
-local dein_dir = cache_home .. "/dein"
-local dein_repo_dir = dein_dir .. "/repos/github.com/Shougo/dein.vim"
+vim.g.mapleader = t'<Space>' -- this should be set before load lazy.nvim
 
--- bootstrap
-if not isdir(dein_repo_dir) then
-	print("dein is not installed. start install...")
-	vim.cmd("!git clone https://github.com/Shougo/dein.vim " .. dein_repo_dir)
+-- bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-vim.g.python3_host_prog = "/usr/bin/python3"
-vim.g.mapleader = t'<Space>'
-
-vim.cmd("let &runtimepath = '" .. dein_repo_dir .. "'.','. &runtimepath")
-if vim.fn['dein#load_state'](dein_dir) == 1 then
-	vim.fn['dein#begin'](dein_dir)
-	vim.fn['dein#load_toml'](cfg_dir .. "/dein/dein.toml", {lazy = 0})
-	vim.fn['dein#load_toml'](cfg_dir .. "/dein/dein_lazy.toml", {lazy = 1})
-	vim.fn['dein#end']()
-	vim.fn['dein#save_state']()
-end
-
-if (vim.fn['dein#check_install']() ~= 0) then
-  vim.fn['dein#install']()
-end
+require('lazy').setup("lazy-plugins") -- load lua/lazy-plugins.lua
 
 -- vim.o.{option}: global option
 -- vim.bo.{option}: buffer option
