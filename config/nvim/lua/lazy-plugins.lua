@@ -109,9 +109,11 @@ return {
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
+      'onsails/lspkind.nvim',
     },
     init = function()
       local cmp = require('cmp')
+      local lspkind = require('lspkind')
       cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine
@@ -130,6 +132,9 @@ return {
           ['<C-e>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
+        formatting = {
+          format = lspkind.cmp_format({})
+        },
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'vsnip' }, -- For vsnip users.
