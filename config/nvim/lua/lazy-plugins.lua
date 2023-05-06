@@ -9,6 +9,14 @@ return {
     end,
   },
 
+  -- statusline
+  {
+    'nvim-lualine/lualine.nvim',
+    init = function()
+      require('lualine').setup()
+    end,
+  },
+
   -- utils
   'cohama/lexima.vim',
 
