@@ -61,4 +61,10 @@ return {
       require('trouble').setup({})
     end,
   },
+  {
+    'j-hui/fidget.nvim',    -- Standalone UI for nvim-lsp progress
+    config = function()
+      require('fidget').setup({})
+    end,
+  },
 }
