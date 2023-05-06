@@ -3,6 +3,8 @@
 	editor = nvim
 [credential]
 	helper = cache --timeout=7200
+	helper = /usr/bin/git-credential-manager
+	credentialStore = cache
 [push]
 	default = current
 [color]
