@@ -32,6 +32,8 @@ local cache_home = env_or_default("XDG_CACHE_HOME", home .. "/.cache")
 
 local cfg_dir = cfg_home .. "/nvim"
 
+vim.g.mapleader = t'<Space>' -- this should be set before load lazy.nvim
+
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
