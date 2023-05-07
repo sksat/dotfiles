@@ -53,6 +53,10 @@ return {
     end,
   },
   'rhysd/vim-llvm',
+  {
+    'Tosainu/earthly.vim',
+    branch = 'my-main',
+  },
 
   -- treesitter
   {
