@@ -53,6 +53,7 @@ return {
     end,
   },
   'rhysd/vim-llvm',
+  'earthly/earthly.vim',
 
   -- treesitter
   {
