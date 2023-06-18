@@ -17,5 +17,7 @@ export QSYS_ROOTDIR="$HOME/.cache/yay/quartus-free/pkg/quartus-free/opt/altera/1
 gpgconf --launch gpg-agent
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
+source "$HOME/.rye/env"
+
 exec fish
 source "$HOME/.cargo/env"
